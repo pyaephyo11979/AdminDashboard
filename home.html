@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="font-awesome-6-pro/css/all.css">
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
     <link rel="stylesheet" href="node_modules/w3.css">
     <title>Dashboard</title>
 </head>
-<body id="body">
+<body id="body" class="position-relative" data-bs-spy="click" data-bs-target=".list-group" data-bs-offset="50">
     <div class="container-fluid">
         <header class="row sticky-top">
             <nav class="navbar navbar-expand">
@@ -30,29 +33,81 @@
         <section class="container-fluid">
             <div class="row">
                 <div class="col-2">
-                    <div class="list-group border-2 text-center ">
-                        <span class="list-grou-item text-secondary ">Controls</span>
-                        <a href="#Dashboard" data-bs-toggle="collapse"  id="homeBtn" class="list-gropu-item text-lg-start text-decoration-none list-group-item-action ">
+                    <div class="list-group mt-2 border-2 text-center ">
+                        <span class="list-group-item disabled ">Controls</span>
+                        <a href="#Dashboard" data-bs-toggle="collapse"  id="homeBtn" class="list-group-item text-lg-start text-decoration-none list-group-item-action ">
                             <i class="fas fa-home"></i>
                             <span class="d-none d-lg-inline">Dashboard</span>
                         </a>
-                        <a href="#" class="list-gropu-item text-decoration-none text-lg-start text-center list-group-item-action">
+                        <a href="#" id="uersBtn" class="list-group-item text-decoration-none text-lg-start text-center list-group-item-action">
                             <i class="fas fa-users"></i>
                             <span class="d-none d-lg-inline">Users</span>
                         </a>
-                        <a href="#" class="list-gropu-item text-decoration-none text-lg-start text-center list-group-item-action">
+                        <a href="#" id="staticsBtn" class="list-group-item text-decoration-none text-lg-start text-center list-group-item-action">
                             <i class="fas fa-line-chart"></i>
                             <span class="d-none d-lg-inline">Statics</span>
                         </a>
-                        <a href="#" class="list-gropu-item text-decoration-none text-lg-start text-center list-group-item-action">
+                        <a href="#" id="booksBtn" class="list-group-item text-decoration-none text-lg-start text-center list-group-item-action">
                             <i class="fas fa-page"></i>
-                            <span class="d-none d-lg-inline">Scripts</span>
+                            <span class="d-none d-lg-inline">Books</span>
+                        </a>
+                    </div>
+                    <div class="list-group mt-4 border-2 text-center">
+                        <span class="list-group-item disabled">Books Management</span>
+                        <a href="#" class="list-group-item text-center text-lg-start list-group-item-action">
+                            <i class="fas fa-books"></i>
+                            <span class="d-none d-lg-inline">Add Books</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center text-lg-start list-group-item-action">
+                            <i class="fas fa-gear"></i>
+                            <span class="d-none d-lg-inline">BooksSettings</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center text-lg-start list-group-item-action">
+                            <i class="fas fa-arrow-circle-up"></i>
+                            <span class="d-none d-lg-inline">Upgrade Editions</span>
                         </a>
                     </div>
                 </div>
                 <div class="col-8">
                     <div class="row flex-column flex-lg-row collapse"  id="Dashboard">
-                        dashboard
+                        <div class="row d-flex flex-row ">
+                            <span class="fs-2 text-secondary">Quick Stats</span>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="fs-4  d-block">Weekly Visitors</span>
+                                        <span class="fs-5 text-primary d-block"><i class="fas fa-line-chart w3-text-amber"></i> 1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="fs-4  d-block">Monthly Visitors</span>
+                                        <span class="fs-5 text-primary d-block"><i class="fas fa-line-chart w3-text-amber"></i> 13000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="fs-4  d-block">Yearly Visitors</span>
+                                        <span class="fs-5 text-primary d-block"><i class="fas fa-line-chart w3-text-amber"></i> 1450000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <span class="fs-4  d-block">EarlyAcces Visitors</span>
+                                        <span class="fs-5 text-primary d-block"><i class="fas fa-line-chart w3-text-amber"></i> 1M</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,11 +119,13 @@
             <a class="btn btn-close" data-bs-dismiss="offcanvas"></a>
         </div>
         <div class="offcanvas-body">
-
         </div>
         <div class="offcanvas-bottom"></div>
     </div>
 </body>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/slick-carousel/slick/slick.js"></script>
+<script src="node_modules/swiper/swiper-bundle.js"></script>
 <script src="home.js"></script>
 </html>
